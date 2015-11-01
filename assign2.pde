@@ -95,7 +95,7 @@ void draw() {
           enemyX = 0;
           enemyY = int(fighterYT);
           }
-        enemyX += 8;
+        enemyX += 5;
         //range of hit enemy 
         enemyXL = enemyX-50;
         enemyXR = enemyX+50;
@@ -123,7 +123,17 @@ void draw() {
           fighterX -= speed;
         if(rightPressed)
           fighterX += speed;
-        fighterYT = int(fighterY); 
+        fighterYT = int(fighterY);
+            //fighter out of boundary
+        if (fighterX >= 580) 
+          rightPressed = false;
+        if (fighterX <= 20)
+          leftPressed = false;
+        if (fighterY <= 20)
+          upPressed = false;
+        if (fighterY >= 420)
+          downPressed = false;
+      
                   
         
         
@@ -197,16 +207,16 @@ void keyPressed(){
         rightPressed = true;
         break;
     }
-    //fighter out of boundary
-    if (fighterX >= 580) 
-      rightPressed = false;
-    if (fighterX <= 20)
-      leftPressed = false;
-    if (fighterY <= 20)
-      upPressed = false;
-    if (fighterY >= 420)
-      downPressed = false;
-      
+        //fighter out of boundary
+        if (fighterX >= 580) 
+          rightPressed = false;
+        if (fighterX <= 20)
+          leftPressed = false;
+        if (fighterY <= 20)
+          upPressed = false;
+        if (fighterY >= 420)
+          downPressed = false;
+
 }
 
 
